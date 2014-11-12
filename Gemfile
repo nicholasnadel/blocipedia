@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'devise'
+gem 'faker'
 gem 'figaro'
 gem 'rails', '4.2.0.beta2'
 # Use sqlite3 as the database for Active Record
