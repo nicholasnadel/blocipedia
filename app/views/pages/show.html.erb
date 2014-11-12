@@ -1,3 +1,7 @@
-<h1><%= @page.title %></h1>
+ <h1><%= markdown @page.title %></h1> 
 <%= link_to "Edit", edit_page_path, class: 'btn btn-succcess' %>
-<p><%= @page.body %></p>
+
+  <div class="row">
+    <div class="col-md-8">
+<p><%= markdown @page.body %></p>
+    </div>
