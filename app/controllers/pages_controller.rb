@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
     @pages = Page.all
+    @free_plan
   end
 
   def show
