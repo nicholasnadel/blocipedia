@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113200135) do
+ActiveRecord::Schema.define(version: 20141113225554) do
 
   create_table "pages", force: true do |t|
     t.text     "body"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141113200135) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.boolean  "private"
   end
 
   create_table "plans", force: true do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141113200135) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "plan_id"
+    t.boolean  "premium"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
