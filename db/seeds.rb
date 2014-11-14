@@ -9,19 +9,11 @@
  end
  pages = Page.all
  
- # Create Comments
- 100.times do
-   Comment.create!(
-     page: pages.sample,
-     body: Faker::Lorem.paragraph
-   )
- end
 
  #Create Plans
  Plan.create!(name: "Free", price: 0)
  Plan.create!(name: "Premium", price: 5)
-end
+
  
  puts "Seed finished"
  puts "#{Page.count} pages created"
- puts "#{Comment.count} comments created"

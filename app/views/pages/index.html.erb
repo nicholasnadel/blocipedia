@@ -1,4 +1,9 @@
 <h1>All Pages</h1>
+
+<% if policy(Page.new).create? %>
+<%= link_to "New Page", new_page_path, class: 'btn btn-success' %>
+<% end %>
+
 <% @pages.each do |page| %>
    <p><%= link_to page.title, page %></p>
    <div class="media">
@@ -8,3 +13,4 @@
      </div>
    </div>
 <% end %>
+

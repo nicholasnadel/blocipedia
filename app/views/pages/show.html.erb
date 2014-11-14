@@ -1,7 +1,9 @@
  <h1><%= markdown @page.title %></h1> 
-<%= link_to "Edit", edit_page_path, class: 'btn btn-succcess' %>
+  <% if policy(@page).edit? %>
+  <%= link_to "Edit", edit_page_path, class: 'btn btn-succcess' %>
+  <% end %>
 
   <div class="row">
     <div class="col-md-8">
-<p><%= markdown @page.body %></p>
+  <p><%= markdown @page.body %></p>
     </div>
