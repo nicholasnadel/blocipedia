@@ -15,7 +15,7 @@ class PrivatePagesController < ApplicationController
       redirect_to root_url 
     end
   end
-  
+
 
   def create
     @page = Page.new(params.require(:page).permit(:title, :body))
