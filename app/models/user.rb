@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  belongs_to :plan
+  
   #roles
   def admin?
     role == 'admin'
@@ -13,10 +15,8 @@ class User < ActiveRecord::Base
     role == 'moderator'
   end
 
-  def unpaid_user
-  end
-
-  def paid_user
+  def premium_user
+    role == 'premium_user'
   end
 
 
