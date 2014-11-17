@@ -1,18 +1,21 @@
-class PagesController < ApplicationController
-  # scope :visible_to, -> (user) { user ? all : where(public: true) }
-
-  def index
-    @pages = Page.all
-    authorize @pages
+class PrivatePagesController < ApplicationController
+  before_action :check_user
+  
+  def index 
   end
-
-  def show
-    @page = Page.find(params[:id])
-  end 
 
   def new
     @page = Page.new
+    authorize @page
   end
+  
+  def check_user
+    if !current_user.premium
+      flash[:notice] = "You're not a preimum  user!"
+      redirect_to root_url 
+    end
+  end
+
 
   def create
     @page = Page.new(params.require(:page).permit(:title, :body))
@@ -44,4 +47,3 @@ class PagesController < ApplicationController
     end
   end
 end
-end #where is end this supposed to go?
