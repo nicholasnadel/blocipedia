@@ -7,4 +7,7 @@ class PagePolicy < ApplicationPolicy
     true
   end
   
+  def show?
+    record.public? || user.present?
+  end
 end
